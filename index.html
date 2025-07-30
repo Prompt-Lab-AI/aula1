@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABNT Completo - Guia Definitivo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#5D5CDE',
+                        secondary: '#818CF8',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.6s ease-out',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .dark .glass-effect {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="book-open" class="w-8 h-8 text-primary"></i>
+                    <span class="text-xl font-bold">ABNT Completo</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#inicio" class="hover:text-primary transition-colors">Início</a>
+                    <a href="#importancia" class="hover:text-primary transition-colors">Importância</a>
+                    <a href="#estrutura" class="hover:text-primary transition-colors">Estrutura</a>
+                    <a href="#formatacao" class="hover:text-primary transition-colors">Formatação</a>
+                    <a href="#citacoes" class="hover:text-primary transition-colors">Citações</a>
+                    <a href="#ferramentas" class="hover:text-primary transition-colors">Ferramentas</a>
+                    <a href="#quiz" class="hover:text-primary transition-colors">Quiz</a>
+                </div>
+                <button id="menuToggle" class="md:hidden">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 z-40 hidden">
+        <div class="fixed inset-0 bg-black bg-opacity-50" id="mobileMenuOverlay"></div>
+        <div class="fixed right-0 top-0 h-full w-64 bg-white dark:bg-gray-800 shadow-lg transform translate-x-full transition-transform duration-300" id="mobileMenuContent">
+            <div class="p-6">
+                <button id="closeMobileMenu" class="absolute top-4 right-4">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+                <div class="mt-8 space-y-4">
+                    <a href="#inicio" class="block py-2 hover:text-primary transition-colors">Início</a>
+                    <a href="#importancia" class="block py-2 hover:text-primary transition-colors">Importância</a>
+                    <a href="#estrutura" class="block py-2 hover:text-primary transition-colors">Estrutura</a>
+                    <a href="#formatacao" class="block py-2 hover:text-primary transition-colors">Formatação</a>
+                    <a href="#citacoes" class="block py-2 hover:text-primary transition-colors">Citações</a>
+                    <a href="#ferramentas" class="block py-2 hover:text-primary transition-colors">Ferramentas</a>
+                    <a href="#quiz" class="block py-2 hover:text-primary transition-colors">Quiz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="min-h-screen flex items-center justify-center gradient-bg text-white">
+        <div class="max-w-4xl mx-auto text-center px-4 animate-fade-in">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">
+                Dominando a <span class="text-yellow-300">ABNT</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                Guia completo para estudantes, pesquisadores e profissionais da saúde
+            </p>
+            <p class="text-lg mb-12 opacity-80 max-w-2xl mx-auto">
+                Aprenda a estruturar seu trabalho acadêmico de acordo com as normas da ABNT, desde a capa até as referências, com foco especial em aplicações práticas na área da saúde.
+            </p>
+            <button onclick="document.getElementById('importancia').scrollIntoView({behavior: 'smooth'})" 
+                    class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
+                Começar Agora
+            </button>
+        </div>
+    </section>
+
+    <!-- Importância da ABNT -->
+    <section id="importancia" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-slide-up">
+                <h2 class="text-4xl font-bold mb-6">Por que a ABNT é Indispensável?</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    A ABNT é crucial tanto no ambiente acadêmico quanto na área da saúde, garantindo padronização, credibilidade e profissionalismo.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="check-circle" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Clareza e Organização</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Informações bem estruturadas e fáceis de compreender</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Credibilidade</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Demonstra rigor e atenção aos detalhes profissionais</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Segurança Legal</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Validade legal e proteção contra plágio</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                        <i data-lucide="users" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Reconhecimento</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Melhor avaliação e propensão à publicação</p>
+                </div>
+            </div>
+
+            <!-- Aplicações na Saúde -->
+            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-xl">
+                <h3 class="text-2xl font-bold mb-6 text-center">Aplicações Práticas na Área da Saúde</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="clipboard-list" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Relatórios de Estágio</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Documentação de experiências práticas</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="heart-pulse" class="w-8 h-8 text-green-600 dark:text-green-400"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Registros de Enfermagem</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Organização para prontuários</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="presentation" class="w-8 h-8 text-purple-600 dark:text-purple-400"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Apresentações Acadêmicas</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Seminários e TCCs padronizados</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-100 dark:bg-orange-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-lucide="newspaper" class="w-8 h-8 text-orange-600 dark:text-orange-400"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Artigos Científicos</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Pesquisas e publicações</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estrutura dos Trabalhos -->
+    <section id="estrutura" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Estrutura Completa dos Trabalhos</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    Compreenda cada elemento e sua importância na construção do trabalho
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Elementos Pré-Textuais -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-800 dark:text-blue-200">Elementos Pré-Textuais</h3>
+                    </div>
+                    <p class="text-blue-700 dark:text-blue-300 mb-6">Antecedem o conteúdo principal, preparando o leitor</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-blue-500 mr-3"></i>
+                            <span>Capa e Folha de Rosto</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-blue-500 mr-3"></i>
+                            <span>Resumos e Palavras-chave</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-blue-500 mr-3"></i>
+                            <span>Listas (ilustrações, tabelas, etc.)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-blue-500 mr-3"></i>
+                            <span>Folha de Aprovação</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-blue-500 mr-3"></i>
+                            <span>Sumário (obrigatório)</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Elementos Textuais -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="edit" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-green-800 dark:text-green-200">Elementos Textuais</h3>
+                    </div>
+                    <p class="text-green-700 dark:text-green-300 mb-6">O cerne do trabalho, onde o tema é desenvolvido</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-green-500 mr-3"></i>
+                            <span>Introdução</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-green-500 mr-3"></i>
+                            <span>Desenvolvimento</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-green-500 mr-3"></i>
+                            <span>Conclusão</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6 p-4 bg-white dark:bg-green-900 rounded-lg">
+                        <p class="text-sm text-green-800 dark:text-green-200">
+                            <strong>Dica:</strong> Divida o desenvolvimento em capítulos, seções e subseções para melhor organização.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Elementos Pós-Textuais -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 p-8 rounded-2xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="bookmark" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-purple-800 dark:text-purple-200">Elementos Pós-Textuais</h3>
+                    </div>
+                    <p class="text-purple-700 dark:text-purple-300 mb-6">Oferecem suporte e complemento ao trabalho</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-purple-500 mr-3"></i>
+                            <span>Referências (obrigatório)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-purple-500 mr-3"></i>
+                            <span>Glossário (opcional)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-purple-500 mr-3"></i>
+                            <span>Apêndices (opcional)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-purple-500 mr-3"></i>
+                            <span>Anexos (opcional)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="circle" class="w-4 h-4 text-purple-500 mr-3"></i>
+                            <span>Índice (opcional)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formatação Técnica -->
+    <section id="formatacao" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Formatação Técnica Essencial</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    A padronização é a chave para um trabalho acadêmico de excelência
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="type" class="w-8 h-8 text-primary mr-3"></i>
+                        <h3 class="text-xl font-semibold">Fonte e Tamanho</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">
+                        <strong>Times New Roman</strong> ou <strong>Arial</strong>
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300">Tamanho <strong>12</strong> para o corpo do texto</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="align-justify" class="w-8 h-8 text-primary mr-3"></i>
+                        <h3 class="text-xl font-semibold">Espaçamento</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-2">Entre linhas: <strong>1,5</strong></p>
+                    <p class="text-gray-600 dark:text-gray-300">Alinhamento: <strong>Justificado</strong></p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="square" class="w-8 h-8 text-primary mr-3"></i>
+                        <h3 class="text-xl font-semibold">Margens</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-1">Superior e Esquerda: <strong>3 cm</strong></p>
+                    <p class="text-gray-600 dark:text-gray-300">Inferior e Direita: <strong>2 cm</strong></p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="indent" class="w-8 h-8 text-primary mr-3"></i>
+                        <h3 class="text-xl font-semibold">Parágrafos</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300">Recuo da primeira linha: <strong>1,25 cm</strong></p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="hash" class="w-8 h-8 text-primary mr-3"></i>
+                        <h3 class="text-xl font-semibold">Numeração</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-1">Canto superior direito</p>
+                    <p class="text-gray-600 dark:text-gray-300">A partir da introdução</p>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="heading" class="w-8 h-8 text-primary mr-3"></i>
+                        <h3 class="text-xl font-semibold">Títulos</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-1">Primários: <strong>CAIXA ALTA E NEGRITO</strong></p>
+                    <p class="text-gray-600 dark:text-gray-300">Secundários: <strong>Primeira letra maiúscula, negrito</strong></p>
+                </div>
+            </div>
+
+            <div class="mt-12 bg-primary text-white p-8 rounded-2xl text-center">
+                <i data-lucide="lightbulb" class="w-12 h-12 mx-auto mb-4"></i>
+                <h3 class="text-2xl font-bold mb-4">Dica Importante</h3>
+                <p class="text-lg">Use a função "Estilos" do Word para aplicar formatações de forma rápida e consistente!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Citações -->
+    <section id="citacoes" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Guia Completo de Citações</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    Citações corretas valorizam seu trabalho e evitam plágio
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="quote" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Citação Direta Curta</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Até 3 linhas</p>
+                    <div class="bg-gray-50 dark:bg-gray-600 p-4 rounded-lg mb-4">
+                        <p class="text-sm font-mono">
+                            "A qualidade dos cuidados de enfermagem é fundamental para a recuperação do paciente" (SILVA, 2023, p. 45).
+                        </p>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>• Incluída no texto entre aspas duplas</li>
+                        <li>• Sobrenome do autor, ano e página</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Citação Direta Longa</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Mais de 3 linhas</p>
+                    <div class="bg-gray-50 dark:bg-gray-600 p-4 rounded-lg mb-4 text-sm">
+                        <div class="pl-8 text-xs leading-relaxed">
+                            A enfermagem moderna requer profissionais capacitados que dominem não apenas as técnicas práticas, mas também os aspectos teóricos e éticos da profissão, garantindo um atendimento humanizado e de qualidade (PEREIRA, 2023, p. 78).
+                        </div>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>• Recuo de 4 cm da margem esquerda</li>
+                        <li>• Fonte menor (tamanho 10)</li>
+                        <li>• Espaçamento simples, sem aspas</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="edit-3" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Citação Indireta</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Paráfrase da ideia do autor</p>
+                    <div class="bg-gray-50 dark:bg-gray-600 p-4 rounded-lg mb-4">
+                        <p class="text-sm">
+                            Segundo Santos (2023), a tecnologia tem revolucionado os cuidados de enfermagem, proporcionando maior precisão nos diagnósticos.
+                        </p>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>• Não usa aspas</li>
+                        <li>• Menciona autor e ano da obra</li>
+                        <li>• Reformulação com suas palavras</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl shadow-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center mr-4">
+                            <i data-lucide="link" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Citação de Citação (Apud)</h3>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">Quando se cita um autor citado por outro</p>
+                    <div class="bg-gray-50 dark:bg-gray-600 p-4 rounded-lg mb-4">
+                        <p class="text-sm">
+                            (SILVA, 2020 apud PEREIRA, 2023, p. 15)
+                        </p>
+                    </div>
+                    <ul class="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                        <li>• Use "apud" (citado por)</li>
+                        <li>• Primeiro autor é o original</li>
+                        <li>• Segundo é quem você consultou</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ferramentas -->
+    <section id="ferramentas" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Ferramentas de Apoio</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    Simplifique sua vida acadêmica com essas ferramentas úteis
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-red-100 dark:bg-red-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="bookmark" class="w-8 h-8 text-red-600 dark:text-red-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Zotero</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Gerenciador de referências gratuito para coleta e organização</p>
+                    <span class="inline-block bg-red-100 dark:bg-red-900 text-red-600 dark:text-red-400 px-3 py-1 rounded-full text-xs">Gratuito</span>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="users" class="w-8 h-8 text-blue-600 dark:text-blue-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Mendeley</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Rede social acadêmica para organizar pesquisas</p>
+                    <span class="inline-block bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 px-3 py-1 rounded-full text-xs">Freemium</span>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="file-text" class="w-8 h-8 text-green-600 dark:text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">MS Word</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Recursos integrados para formatação e citações</p>
+                    <span class="inline-block bg-green-100 dark:bg-green-900 text-green-600 dark:text-green-400 px-3 py-1 rounded-full text-xs">Pago</span>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg text-center hover:shadow-xl transition-shadow">
+                    <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="cloud" class="w-8 h-8 text-yellow-600 dark:text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Google Docs</h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">Edição colaborativa com plugins ABNT</p>
+                    <span class="inline-block bg-yellow-100 dark:bg-yellow-900 text-yellow-600 dark:text-yellow-400 px-3 py-1 rounded-full text-xs">Gratuito</span>
+                </div>
+            </div>
+
+            <!-- Geradores de Citação -->
+            <div class="bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-xl">
+                <h3 class="text-2xl font-bold mb-6 text-center">Geradores de Citações e Referências</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="text-center p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
+                        <i data-lucide="zap" class="w-12 h-12 text-primary mx-auto mb-3"></i>
+                        <h4 class="font-semibold mb-2">FastFormat</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Geração automática de referências</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
+                        <i data-lucide="globe" class="w-12 h-12 text-primary mx-auto mb-3"></i>
+                        <h4 class="font-semibold mb-2">Mundo ABNT</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Formatação online completa</p>
+                    </div>
+                    <div class="text-center p-4 bg-gray-50 dark:bg-gray-600 rounded-lg">
+                        <i data-lucide="download" class="w-12 h-12 text-primary mx-auto mb-3"></i>
+                        <h4 class="font-semibold mb-2">Modelos Prontos</h4>
+                        <p class="text-sm text-gray-600 dark:text-gray-300">Templates institucionais</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Dúvidas Frequentes</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    Respostas para as perguntas mais comuns sobre ABNT
+                </p>
+            </div>
+
+            <div class="space-y-6">
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <button class="faq-button w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors rounded-lg">
+                        <span class="font-semibold">Posso usar outra fonte além de Times New Roman ou Arial?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300">Não. A ABNT especifica essas duas fontes para garantir a padronização e legibilidade dos documentos.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <button class="faq-button w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors rounded-lg">
+                        <span class="font-semibold">Onde coloco a numeração das páginas?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300">A numeração deve aparecer no canto superior direito da página, a partir da primeira folha do conteúdo textual, embora a contagem comece na folha de rosto.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <button class="faq-button w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors rounded-lg">
+                        <span class="font-semibold">Preciso citar tudo o que pesquiso?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300">Sim. Toda informação que não é de sua autoria original deve ser citada, para dar crédito ao autor e evitar plágio.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white dark:bg-gray-700 rounded-lg shadow-lg">
+                    <button class="faq-button w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors rounded-lg">
+                        <span class="font-semibold">Como referenciar um site sem autor ou data?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-4">
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">A ABNT permite adaptações. Pode-se começar pela primeira palavra do título em caixa alta:</p>
+                        <div class="bg-gray-50 dark:bg-gray-600 p-3 rounded text-sm font-mono">
+                            <p class="mb-2">Site sem autor e sem data:</p>
+                            <p class="mb-4">DICAS DE ESTUDO. s.d. Disponível em: https://www.exemplo.com/dicas-estudo. Acesso em: 30 jul. 2025.</p>
+                            <p class="mb-2">Site com autor e data:</p>
+                            <p>SILVA, João. Como fazer uma monografia passo a passo. 2020. Disponível em: https://www.exemplo.com/monografia. Acesso em: 31 jul. 2025.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Interativo -->
+    <section id="quiz" class="py-20 bg-gradient-to-br from-primary to-secondary text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-6">Quiz Interativo</h2>
+                <p class="text-xl opacity-90">
+                    Teste seus conhecimentos e fixe o aprendizado sobre ABNT
+                </p>
+            </div>
+
+            <div id="quizContainer" class="bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8">
+                <div id="quizContent">
+                    <div class="text-center">
+                        <i data-lucide="play-circle" class="w-20 h-20 mx-auto mb-6"></i>
+                        <h3 class="text-2xl font-bold mb-4">Pronto para testar seus conhecimentos?</h3>
+                        <p class="text-lg opacity-90 mb-8">
+                            Responda 5 perguntas sobre formatação ABNT e veja seu desempenho!
+                        </p>
+                        <button id="startQuiz" class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
+                            Iniciar Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="quizResults" class="hidden mt-8 bg-white bg-opacity-10 backdrop-blur-lg rounded-2xl p-8 text-center">
+                <h3 class="text-2xl font-bold mb-4">Resultado do Quiz</h3>
+                <div id="scoreDisplay" class="text-4xl font-bold mb-4"></div>
+                <div id="performanceMessage" class="text-lg mb-6"></div>
+                <button id="restartQuiz" class="bg-white text-purple-600 px-6 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all">
+                    Fazer Novamente
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <i data-lucide="book-open" class="w-8 h-8 text-primary"></i>
+                    <span class="text-2xl font-bold">ABNT Completo</span>
+                </div>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Material educativo completo sobre normas ABNT para estudantes, pesquisadores e profissionais da área da saúde.
+                </p>
+                <div class="border-t border-gray-700 pt-8">
+                    <p class="text-gray-500">
+                        © 2024 ABNT Completo. Material educativo baseado nas normas oficiais da ABNT.
+                    </p>
+                    <p class="text-gray-500 mt-2 italic">
+                        "A excelência não é um ato, mas um hábito." - Aristóteles
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode detection
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuContent = document.getElementById('mobileMenuContent');
+        const closeMobileMenu = document.getElementById('closeMobileMenu');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenuContent.classList.remove('translate-x-full');
+            }, 10);
+        }
+
+        function closeMobileMenuFunc() {
+            mobileMenuContent.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+
+        menuToggle.addEventListener('click', openMobileMenu);
+        closeMobileMenu.addEventListener('click', closeMobileMenuFunc);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenuFunc);
+
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('#mobileMenuContent a').forEach(link => {
+            link.addEventListener('click', closeMobileMenuFunc);
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('[data-lucide="chevron-down"]');
+                
+                if (content.classList.contains('hidden')) {
+                    content.classList.remove('hidden');
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    content.classList.add('hidden');
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+
+        // Quiz functionality
+        const quizQuestions = [
+            {
+                question: "Qual deve ser o tamanho da fonte para o corpo do texto?",
+                options: ["10", "11", "12", "14"],
+                correct: 2
+            },
+            {
+                question: "Qual é o espaçamento correto entre linhas?",
+                options: ["1,0", "1,5", "2,0", "2,5"],
+                correct: 1
+            },
+            {
+                question: "Qual deve ser o recuo da primeira linha do parágrafo?",
+                options: ["1,0 cm", "1,25 cm", "1,5 cm", "2,0 cm"],
+                correct: 1
+            },
+            {
+                question: "Onde deve aparecer a numeração das páginas?",
+                options: ["Canto inferior direito", "Canto superior direito", "Canto inferior esquerdo", "Centro da página"],
+                correct: 1
+            },
+            {
+                question: "Qual é a margem superior em trabalhos ABNT?",
+                options: ["2 cm", "2,5 cm", "3 cm", "3,5 cm"],
+                correct: 2
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+        let quizStarted = false;
+
+        const startQuizBtn = document.getElementById('startQuiz');
+        const quizContent = document.getElementById('quizContent');
+        const quizResults = document.getElementById('quizResults');
+        const restartQuizBtn = document.getElementById('restartQuiz');
+
+        function startQuiz() {
+            quizStarted = true;
+            currentQuestion = 0;
+            score = 0;
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            quizContent.innerHTML = `
+                <div class="mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <span class="text-sm opacity-75">Pergunta ${currentQuestion + 1} de ${quizQuestions.length}</span>
+                        <div class="w-32 bg-white bg-opacity-20 rounded-full h-2">
+                            <div class="bg-white h-2 rounded-full transition-all duration-300" style="width: ${((currentQuestion + 1) / quizQuestions.length) * 100}%"></div>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-6">${question.question}</h3>
+                    <div class="space-y-3">
+                        ${question.options.map((option, index) => `
+                            <button class="quiz-option w-full p-4 bg-white bg-opacity-10 rounded-lg text-left hover:bg-opacity-20 transition-all" data-option="${index}">
+                                ${option}
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            // Add event listeners to options
+            document.querySelectorAll('.quiz-option').forEach(option => {
+                option.addEventListener('click', (e) => {
+                    const selectedOption = parseInt(e.target.dataset.option);
+                    checkAnswer(selectedOption);
+                });
+            });
+        }
+
+        function checkAnswer(selectedOption) {
+            const question = quizQuestions[currentQuestion];
+            const isCorrect = selectedOption === question.correct;
+            
+            if (isCorrect) {
+                score++;
+            }
+
+            // Show feedback
+            document.querySelectorAll('.quiz-option').forEach((option, index) => {
+                option.style.pointerEvents = 'none';
+                if (index === question.correct) {
+                    option.classList.add('bg-green-500', 'bg-opacity-50');
+                } else if (index === selectedOption && !isCorrect) {
+                    option.classList.add('bg-red-500', 'bg-opacity-50');
+                }
+            });
+
+            // Move to next question after delay
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < quizQuestions.length) {
+                    showQuestion();
+                } else {
+                    showResults();
+                }
+            }, 1500);
+        }
+
+        function showResults() {
+            const percentage = (score / quizQuestions.length) * 100;
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = 'Excelente! Você domina bem as normas ABNT! 🎉';
+            } else if (percentage >= 60) {
+                message = 'Bom trabalho! Algumas revisões vão te deixar expert! 👏';
+            } else {
+                message = 'Continue estudando! A prática leva à perfeição! 📚';
+            }
+
+            document.getElementById('scoreDisplay').textContent = `${score}/${quizQuestions.length} (${percentage.toFixed(0)}%)`;
+            document.getElementById('performanceMessage').textContent = message;
+            
+            quizContent.classList.add('hidden');
+            quizResults.classList.remove('hidden');
+        }
+
+        function restartQuiz() {
+            quizResults.classList.add('hidden');
+            quizContent.classList.remove('hidden');
+            quizContent.innerHTML = `
+                <div class="text-center">
+                    <i data-lucide="play-circle" class="w-20 h-20 mx-auto mb-6"></i>
+                    <h3 class="text-2xl font-bold mb-4">Pronto para testar seus conhecimentos novamente?</h3>
+                    <p class="text-lg opacity-90 mb-8">
+                        Responda 5 perguntas sobre formatação ABNT e veja seu desempenho!
+                    </p>
+                    <button id="startQuiz2" class="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-opacity-90 transition-all transform hover:scale-105">
+                        Iniciar Quiz
+                    </button>
+                </div>
+            `;
+            
+            // Re-initialize icons and event listener
+            lucide.createIcons();
+            document.getElementById('startQuiz2').addEventListener('click', startQuiz);
+        }
+
+        // Event listeners
+        startQuizBtn.addEventListener('click', startQuiz);
+        restartQuizBtn.addEventListener('click', restartQuiz);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
